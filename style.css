@@ -1,0 +1,107 @@
+.container {
+  font-family: "Abyssinica SIL", serif;
+}
+.current-temp {
+  text-align: center;
+  padding: 0%;
+}
+.five-day {
+  padding: 0;
+}
+.sun {
+  color: orange;
+  font-size: 45px;
+  padding-bottom: 20px;
+}
+.form-control {
+  position: relative;
+  left: 58px;
+  width: 75%;
+}
+h1 {
+  margin-bottom: 10px;
+}
+h6 {
+  padding-top: 10px;
+}
+.mb-3 {
+  line-height: 0;
+}
+button {
+  margin-bottom: 15px;
+}
+
+.days {
+  display: block;
+  text-align: left;
+  font-size: 20px;
+  margin-top: 23.75px;
+  padding-left: 10px;
+}
+.border {
+  margin: 30px;
+  padding: 5rem !important;
+  border: 10px solid !important;
+  border-image-slice: 1 !important;
+  border-width: 5px !important;
+
+  border-image-source: radial-gradient(
+    circle at 10% 20%,
+    rgb(253, 239, 132) 0%,
+    rgb(247, 198, 169) 54.2%,
+    rgb(21, 186, 196) 100.3%
+  ) !important;
+}
+
+.degree {
+  display: block;
+  text-align: left;
+  font-size: 20px;
+  margin-top: 23.75px;
+}
+.temp-icon {
+  display: block;
+  text-align: left;
+  font-size: 24px;
+  margin-top: 23.75px;
+}
+ul {
+  line-height: 35px;
+  list-style-type: none;
+  margin-bottom: 1.25rem;
+}
+.icons {
+  padding-left: 0;
+}
+.fa-sun {
+  color: orange;
+}
+.fa-cloud {
+  color: #a9b3bc;
+}
+
+.weatherBorder {
+  float: right;
+  width: 1px;
+  height: 350px;
+  background: linear-gradient(
+    180deg,
+    #f5f6f6 0,
+    #dbdce2 21%,
+    #b8bac6 49%,
+    #dddfe3 80%,
+    #f5f6f6
+  );
+}
+.col-4 {
+  padding-left: 71px;
+}
+.units {
+  position: relative;
+  top: -15px;
+  left: -14px;
+  font-size: 15px;
+}
+a:link {
+  text-decoration: none;
+}
