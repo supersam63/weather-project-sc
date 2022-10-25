@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Weather</title>
+    <meta charset="UTF-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="src/style.css" />
+    <script
+      src="https://kit.fontawesome.com/33ffdc66da.js"
+      crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div
+      class="p-3 bg-light bg-opacity-10 border my-border-color border-2 rounded-end rounded-start">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 current-temp">
+            <span class="weatherBorder"></span>
+            <h3 id="current-location">Salt Lake City</h3>
+            <h1>
+              <span id="current-temperature">58</span>
+              <span class="units">
+                <a href="#" id="farenheit-link">°F</a>|<a
+                  href="#"
+                  id="celcius-link"
+                  >°C</a
+                >
+              </span>
+            </h1>
+            <i class="fa-solid fa-sun sun"></i>
+            <h6 id="todays-date"></h6>
+            <form id="search-form">
+              <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label"></label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="city-search-input"
+                  placeholder="Search for a City" />
+              </div>
+              <span class="go-button">
+                <button
+                  type="button"
+                  class="btn btn-outline-primary"
+                  id="go-button">
+                  Go
+                </button>
+              </span>
+              <span class="current-location-button">
+                <button
+                  type="button"
+                  class="btn btn-outline-success"
+                  id="current-location-button">
+                  Current Location
+                </button>
+              </span>
+            </form>
+          </div>
+
+          <div class="col-6 five-day">
+            <div class="row">
+              <div class="col-4">
+                <ul>
+                  <li class="days">Sunday</li>
+                  <li class="days">Monday</li>
+                  <li class="days">Tuesday</li>
+                  <li class="days">Wednesday</li>
+                  <li class="days">Thursday</li>
+                </ul>
+              </div>
+              <div class="col-4">
+                <ul>
+                  <li class="degree">70° F</li>
+                  <li class="degree">72° F</li>
+                  <li class="degree">74° F</li>
+                  <li class="degree">73° F</li>
+                  <li class="degree">75° F</li>
+                </ul>
+              </div>
+              <div class="col-4">
+                <ul class="icons">
+                  <li class="temp-icon">
+                    <i class="fa-solid fa-sun"></i>
+                  </li>
+                  <li class="temp-icon">
+                    <i class="fa-solid fa-sun"></i>
+                  </li>
+                  <li class="temp-icon">
+                    <i class="fa-solid fa-sun"></i>
+                  </li>
+                  <li class="temp-icon">
+                    <i class="fa-solid fa-cloud"></i>
+                  </li>
+                  <li class="temp-icon">
+                    <i class="fa-solid fa-sun"></i>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
