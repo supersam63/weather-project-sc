@@ -1,4 +1,5 @@
-function formattedDate(date) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
   let dayNumber = date.getDate();
   let hours = date.getHours();
   if (hours < 10) {
@@ -12,7 +13,7 @@ function formattedDate(date) {
   let days = [
     "Sunday",
     "Monday",
-    "Tueday",
+    "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
@@ -38,10 +39,6 @@ function formattedDate(date) {
   return `${day} ${dayNumber} ${month} ${hours}:${minutes}`;
 }
 
-let dateElement = document.querySelector("#todays-date");
-let now = new Date();
-dateElement.innerHTML = formattedDate(now);
-
 //function celToFar(event) {
 //  event.preventDefault();
 // currentTemperature.innerHTML = `14`;
@@ -58,14 +55,16 @@ dateElement.innerHTML = formattedDate(now);
 ////farenheit.addEventListener("click", farToCel);
 //
 function displayWeatherCondition(response) {
-  document.querySelector("#current-location").innerHTML = response.data.name;
+  document.querySelector("#current-location").innerHTML = response.data.city;
   document.querySelector("#current-temperature").innerHTML = Math.round(
-    response.data.main.temp
+    response.data.temperature.current
   );
+  let dateElement = document.querySelector("#todays-date");
+  dateElement.innerHTML = formatDate(response.data.time * 1000);
 }
 function search(searchInput) {
-  let apiKey = "e6ab16c32b334c5dee03bb9b67c3cb55";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&appid=${apiKey}&units=imperial`;
+  let apiKey = "4a240de8db217dtodb6166f343d5aa4a";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${searchInput}&key=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 function handleSubmit(event) {
@@ -75,10 +74,10 @@ function handleSubmit(event) {
 }
 
 function showGeoPosition(position) {
-  let latitude = position.coords.latitude;
-  let longitude = position.coords.longitude;
-  let apiKey = "e6ab16c32b334c5dee03bb9b67c3cb55";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
+  let latitude = position.data.coordinates.latitude;
+  let longitude = position.data.coordinates.longitude;
+  let apiKey = "4a240de8db217dtodb6166f343d5aa4a";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
