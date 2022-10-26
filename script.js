@@ -55,12 +55,17 @@ function formatDate(timestamp) {
 ////farenheit.addEventListener("click", farToCel);
 //
 function displayWeatherCondition(response) {
+  let dateElement = document.querySelector("#todays-date");
+  let mainIconElement = document.querySelector("#main-icon");
   document.querySelector("#current-location").innerHTML = response.data.city;
   document.querySelector("#current-temperature").innerHTML = Math.round(
     response.data.temperature.current
   );
-  let dateElement = document.querySelector("#todays-date");
   dateElement.innerHTML = formatDate(response.data.time * 1000);
+  mainIconElement.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
+  );
 }
 function search(searchInput) {
   let apiKey = "4a240de8db217dtodb6166f343d5aa4a";
