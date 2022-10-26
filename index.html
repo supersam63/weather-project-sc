@@ -13,7 +13,7 @@
     <link
       href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap"
       rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="src/style.css" />
     <script
       src="https://kit.fontawesome.com/33ffdc66da.js"
       crossorigin="anonymous"></script>
@@ -27,9 +27,9 @@
         <div class="row">
           <div class="col-6 current-temp">
             <span class="weatherBorder"></span>
-            <h3 id="current-location">Salt Lake City</h3>
+            <h3 id="current-location"></h3>
             <h1>
-              <span id="current-temperature">58</span>
+              <span id="current-temperature"></span>
               <span class="units">
                 <a href="#" id="farenheit-link">°F</a>|<a
                   href="#"
@@ -72,20 +72,11 @@
             <div class="row">
               <div class="col-4">
                 <ul>
-                  <li class="days">Sunday</li>
-                  <li class="days">Monday</li>
-                  <li class="days">Tuesday</li>
-                  <li class="days">Wednesday</li>
-                  <li class="days">Thursday</li>
-                </ul>
-              </div>
-              <div class="col-4">
-                <ul>
-                  <li class="degree">70° F</li>
-                  <li class="degree">72° F</li>
-                  <li class="degree">74° F</li>
-                  <li class="degree">73° F</li>
-                  <li class="degree">75° F</li>
+                  <li class="days">Sun</li>
+                  <li class="days">Mon</li>
+                  <li class="days">Tue</li>
+                  <li class="days">Wed</li>
+                  <li class="days">Thur</li>
                 </ul>
               </div>
               <div class="col-4">
@@ -107,6 +98,24 @@
                   </li>
                 </ul>
               </div>
+              <div class="col-2 high">
+                <ul>
+                  <li class="degree">50°</li>
+                  <li class="degree">55°</li>
+                  <li class="degree">56°</li>
+                  <li class="degree">48°</li>
+                  <li class="degree">55°</li>
+                </ul>
+              </div>
+              <div class="col-2 low">
+                <ul>
+                  <li class="degree">40°</li>
+                  <li class="degree">35°</li>
+                  <li class="degree">31°</li>
+                  <li class="degree">35°</li>
+                  <li class="degree">32°</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -117,6 +126,6 @@
         >Open-source code</a
       >, by Samantha Vellinga
     </div>
-    <script src="script.js"></script>
+    <script src="src/index.js"></script>
   </body>
 </html>
