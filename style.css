@@ -27,7 +27,7 @@ h6 {
 .mb-3 {
   line-height: 0;
 }
-button {
+button .go-button {
   margin-bottom: 15px;
 }
 
