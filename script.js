@@ -40,12 +40,18 @@ function formatDate(timestamp) {
 }
 
 function displayWeatherCondition(response) {
+  console.log(response);
   let dateElement = document.querySelector("#todays-date");
   let mainIconElement = document.querySelector("#main-icon");
+  let windSpeed = document.querySelector("#wind");
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = response.data.temperature.humidity;
+  windSpeed.innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#current-location").innerHTML = response.data.city;
   document.querySelector("#current-temperature").innerHTML = Math.round(
     response.data.temperature.current
   );
+
   dateElement.innerHTML = formatDate(response.data.time * 1000);
   mainIconElement.setAttribute(
     "src",
