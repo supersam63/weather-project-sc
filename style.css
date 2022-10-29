@@ -65,7 +65,15 @@ button .go-button {
   font-size: 24px;
   margin-top: 23.75px;
 }
-ul {
+.current-weather-conditions {
+  list-style-type: none;
+  font-size: 1rem;
+  padding: 0;
+  margin-bottom: 0;
+  color: rgba(39, 33, 66, 0.4);
+}
+
+ul .highs .lows .forcast .icons {
   line-height: 35px;
   list-style-type: none;
   margin-bottom: 1.25rem;
@@ -105,14 +113,14 @@ ul {
 a:link {
   text-decoration: none;
 }
+.low {
+  color: #878787;
+}
 .open-source {
   font-size: 12px;
   position: relative;
   top: -20px;
   left: 30px;
-}
-.low {
-  color: #878787;
 }
 .units .active {
   color: black;
