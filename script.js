@@ -82,7 +82,7 @@ function showGeoPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let apiKey = "4a240de8db217dtodb6166f343d5aa4a";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=imperial`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?lat=${latitude}&lon=${longitude}&key=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayWeatherCondition);
 }
 
