@@ -48,8 +48,8 @@ button .go-button {
   border-image-source: radial-gradient(
     circle at 10% 20%,
     rgb(253, 239, 132) 0%,
-    rgb(247, 198, 169) 54.2%,
-    rgb(21, 186, 196) 100.3%
+    rgb(247, 198, 169) 44%,
+    rgb(21, 186, 196) 75%
   ) !important;
 }
 
