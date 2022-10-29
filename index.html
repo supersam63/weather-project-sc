@@ -37,6 +37,16 @@
                   >°C</a
                 >
               </span>
+              <div class="current-conditions">
+                <ul class="current-weather-conditions">
+                  <li style="display: inline">
+                    Wind: <span id="wind"></span>m/h,
+                  </li>
+                  <li style="display: inline">
+                    Humidity: <span id="humidity"></span>%
+                  </li>
+                </ul>
+              </div>
             </h1>
             <img src="" id="main-icon" />
             <h6 id="todays-date"></h6>
@@ -70,7 +80,7 @@
           <div class="col-6 five-day">
             <div class="row">
               <div class="col-4">
-                <ul>
+                <ul class="forcast">
                   <li class="days">Sun</li>
                   <li class="days">Mon</li>
                   <li class="days">Tue</li>
@@ -98,7 +108,7 @@
                 </ul>
               </div>
               <div class="col-2 high">
-                <ul>
+                <ul class="highs">
                   <li class="degree">50°</li>
                   <li class="degree">55°</li>
                   <li class="degree">56°</li>
@@ -107,7 +117,7 @@
                 </ul>
               </div>
               <div class="col-2 low">
-                <ul>
+                <ul class="lows">
                   <li class="degree">40°</li>
                   <li class="degree">35°</li>
                   <li class="degree">31°</li>
