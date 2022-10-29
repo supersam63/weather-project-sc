@@ -45,6 +45,8 @@ function displayWeatherCondition(response) {
   let mainIconElement = document.querySelector("#main-icon");
   let windSpeed = document.querySelector("#wind");
   let humidity = document.querySelector("#humidity");
+  let conditionDescription = document.querySelector("#condition");
+  conditionDescription.innerHTML = response.data.condition.description;
   humidity.innerHTML = response.data.temperature.humidity;
   windSpeed.innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#current-location").innerHTML = response.data.city;
