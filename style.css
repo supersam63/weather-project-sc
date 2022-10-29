@@ -73,10 +73,12 @@ button .go-button {
   color: rgba(39, 33, 66, 0.4);
 }
 .current-condition {
-  font-size: 24px;
+  font-size: 20px;
   padding-top: 8px;
 }
-
+.current-condition:first-letter {
+  text-transform: capitalize;
+}
 ul .highs .lows .forcast .icons {
   line-height: 35px;
   list-style-type: none;
