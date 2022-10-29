@@ -114,3 +114,11 @@ a:link {
 .low {
   color: #878787;
 }
+.units .active {
+  color: black;
+  cursor: default;
+}
+.units .active:hover {
+  text-decoration: none;
+  color: black;
+}
