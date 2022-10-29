@@ -39,21 +39,6 @@ function formatDate(timestamp) {
   return `${day} ${dayNumber} ${month} ${hours}:${minutes}`;
 }
 
-//function celToFar(event) {
-//  event.preventDefault();
-// currentTemperature.innerHTML = `14`;
-//}
-//function farToCel(event) {
-// event.preventDefault();
-//currentTemperature.innerHTML = `58`;
-//}
-
-//let currentTemperature = document.querySelector("#current-temperature");
-//let celcius = document.querySelector("#celcius-link");
-//celcius.addEventListener("click", celToFar);
-//let farenheit = document.querySelector("#farenheit-link");
-////farenheit.addEventListener("click", farToCel);
-//
 function displayWeatherCondition(response) {
   let dateElement = document.querySelector("#todays-date");
   let mainIconElement = document.querySelector("#main-icon");
@@ -66,6 +51,7 @@ function displayWeatherCondition(response) {
     "src",
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
+  fahrenheitTemperature = response.data.temperature.current;
 }
 function search(searchInput) {
   let apiKey = "4a240de8db217dtodb6166f343d5aa4a";
@@ -90,10 +76,35 @@ function getCurrentLocation() {
   navigator.geolocation.getCurrentPosition(showGeoPosition);
 }
 
+function displayCelciusTemp(event) {
+  event.preventDefault();
+  let celciusTemperature = ((fahrenheitTemperature - 32) * 5) / 9;
+  let temperatureElement = document.querySelector("#current-temperature");
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
+  fahrenheitLink.classList.remove("active");
+  celciusLink.classList.add("active");
+}
+
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#current-temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  celciusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+}
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 let currentLocatonButton = document.querySelector("#current-location-button");
 currentLocatonButton.addEventListener("click", getCurrentLocation);
+
+let fahrenheitTemperature = null;
+
+let celciusLink = document.querySelector("#celcius-link");
+celciusLink.addEventListener("click", displayCelciusTemp);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 
 search("New York");
