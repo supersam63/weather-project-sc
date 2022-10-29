@@ -72,6 +72,10 @@ button .go-button {
   margin-bottom: 0;
   color: rgba(39, 33, 66, 0.4);
 }
+.current-condition {
+  font-size: 24px;
+  padding-top: 8px;
+}
 
 ul .highs .lows .forcast .icons {
   line-height: 35px;
