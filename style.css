@@ -1,7 +1,8 @@
 .container {
   font-family: "Abyssinica SIL", serif;
 }
-.current-temp {
+.current-temp,
+.forecast-grid {
   text-align: center;
   padding: 0%;
 }
@@ -79,6 +80,7 @@ button .go-button {
 .current-condition:first-letter {
   text-transform: capitalize;
 }
+
 ul .highs .lows .forcast .icons {
   line-height: 35px;
   list-style-type: none;
@@ -97,7 +99,7 @@ ul .highs .lows .forcast .icons {
 .weatherBorder {
   float: right;
   width: 1px;
-  height: 350px;
+  height: 375px;
   background: linear-gradient(
     180deg,
     #f5f6f6 0,
@@ -135,4 +137,12 @@ a:link {
 .units .active:hover {
   text-decoration: none;
   color: black;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.item {
+  align-self: center;
+  justify-self: center;
 }
