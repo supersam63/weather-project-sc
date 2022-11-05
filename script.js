@@ -39,6 +39,27 @@ function formatDate(timestamp) {
   return `${day} ${dayNumber} ${month} ${hours}:${minutes}`;
 }
 
+function displayForcast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = "";
+  let days = ["Thursday", "Friday", "Saturday", "Sunday", "Monday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="grid">
+      <div class="item forecast-day">${day}</div>
+      <div class="item forecast-img">
+      <img
+      src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png" width="75"/>
+      </div>
+      <div class="item forecast-high">75°</div>
+      <div class="item forecast-low">32°</div>
+      </div>`;
+  });
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayWeatherCondition(response) {
   console.log(response);
   let dateElement = document.querySelector("#todays-date");
@@ -116,3 +137,4 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 
 search("New York");
+displayForcast();
