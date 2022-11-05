@@ -39,7 +39,8 @@ function formatDate(timestamp) {
   return `${day} ${dayNumber} ${month} ${hours}:${minutes}`;
 }
 
-function displayForcast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = "";
   let days = ["Thursday", "Friday", "Saturday", "Sunday", "Monday"];
@@ -60,8 +61,13 @@ function displayForcast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  let apiKey = "4a240de8db217dtodb6166f343d5aa4a";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function displayWeatherCondition(response) {
-  console.log(response);
   let dateElement = document.querySelector("#todays-date");
   let mainIconElement = document.querySelector("#main-icon");
   let windSpeed = document.querySelector("#wind");
@@ -81,6 +87,8 @@ function displayWeatherCondition(response) {
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
   fahrenheitTemperature = response.data.temperature.current;
+
+  getForecast(response.data.coordinates);
 }
 function search(searchInput) {
   let apiKey = "4a240de8db217dtodb6166f343d5aa4a";
@@ -137,4 +145,3 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
 
 search("New York");
-displayForcast();
