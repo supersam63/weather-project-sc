@@ -112,15 +112,34 @@ button .go-button {
 .forecast-low {
   opacity: 0.5;
 }
+.show-on-small {
+  display: none;
+}
+
 @media (max-width: 992px) {
   .weather-border {
     display: none;
   }
-  .grid {
-    padding-left: 0;
-    margin-right: 10%;
-  }
   .current-temp {
     margin-bottom: 50px;
+  }
+  .current-location-button {
+    display: block;
+    margin-top: 10px;
+  }
+  .forecast-low {
+    display: none;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 100px 100px 100px;
+    padding: 0;
+    justify-content: center;
+  }
+  .show-on-large {
+    display: none;
+  }
+  .show-on-small {
+    display: block;
   }
 }
