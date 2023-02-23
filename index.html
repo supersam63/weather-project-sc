@@ -9,6 +9,7 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,13 +25,14 @@
   </head>
 
   <body>
-    <div
-      class="p-3 bg-light bg-opacity-10 border my-border-color border-2 rounded-end rounded-start"
-    >
+    <div class="hero">
+          <div
+      class="p-3 bg-light bg-opacity-10 border my-border-color border-2 rounded-end rounded-start">
       <div class="container-fluid remove-margin">
         <div class="row">
-          <div class="col-6 current-temp">
-            <span class="weatherBorder"></span>
+          <div class="col-lg-6 current-temp">
+            <span class="weather-border"></span>
+            
             <h3 id="current-location"></h3>
             <h1>
               <span id="current-temperature"></span>
@@ -81,21 +83,23 @@
                 </button>
               </span>
             </form>
+           
           </div>
-          <div class="col-5 forcast-grid" id="forecast">
+          <div class="col-lg-5 forcast-grid" id="forecast">
             
           </div>
           
             </div>
           </div>
+          <div class="open-source">
+            <a href="https://github.com/supersam63/weather-project-sc" target="_blank"
+              >Open-source code</a
+            >, by Samantha Vellinga
+          </div>
         </div>
       </div>
     </div>
-    <div class="open-source">
-      <a href="https://github.com/supersam63/weather-project-sc" target="_blank"
-        >Open-source code</a
-      >, by Samantha Vellinga
-    </div>
+  </div>
     <script src="script.js"></script>
   </body>
 </html>

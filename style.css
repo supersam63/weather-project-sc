@@ -1,20 +1,22 @@
+.hero {
+  max-width: 1580px;
+  margin: 0 auto;
+}
 .container-fluid {
   font-family: "Abyssinica SIL", serif;
 }
-.remove-margin {
-  margin: 0 !important;
-}
+
 .current-temp,
 .forcast-grid {
   text-align: center;
   padding: 0%;
 }
-
-.form-control {
-  position: relative;
-  left: 93px;
-  width: 65%;
+form {
+  display: inline-block;
+  text-align: center;
+  width: 50%;
 }
+
 h1 {
   margin-top: 20px;
   margin-bottom: 10px;
@@ -70,7 +72,7 @@ button .go-button {
   text-transform: capitalize;
 }
 
-.weatherBorder {
+.weather-border {
   float: right;
   width: 1px;
   height: 400px;
@@ -96,8 +98,7 @@ button .go-button {
 .open-source {
   font-size: 12px;
   position: relative;
-  top: -20px;
-  left: 30px;
+  top: 102px;
 }
 
 .grid {
@@ -110,4 +111,16 @@ button .go-button {
 }
 .forecast-low {
   opacity: 0.5;
+}
+@media (max-width: 992px) {
+  .weather-border {
+    display: none;
+  }
+  .grid {
+    padding-left: 0;
+    margin-right: 10%;
+  }
+  .current-temp {
+    margin-bottom: 50px;
+  }
 }
