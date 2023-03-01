@@ -151,4 +151,10 @@ a:link {
   .show-on-small {
     display: block;
   }
+  .units {
+    position: relative;
+    top: -8px;
+    left: -8px;
+    font-size: 15px;
+  }
 }
