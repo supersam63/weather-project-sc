@@ -94,13 +94,22 @@ button .go-button {
   left: -14px;
   font-size: 15px;
 }
-
+a:link {
+  text-decoration: none;
+}
 .open-source {
   font-size: 12px;
   position: relative;
   top: 102px;
 }
-
+.units .active {
+  color: black;
+  cursor: default;
+}
+.units .active:hover {
+  text-decoration: none;
+  color: black;
+}
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 75px 75px;
